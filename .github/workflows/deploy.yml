@@ -26,6 +26,6 @@ jobs:
 
       - name: Deploy lambda to production
         run: |
-          cd helloworld
+          cd .
           chalice deploy --stage prod
 
