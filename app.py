@@ -1,5 +1,6 @@
 from chalice import Chalice
 import time, requests
+from faker import Faker
 
 app = Chalice(app_name='helloworld')
 
@@ -27,3 +28,13 @@ def index():
         'time_taken': time_asleep,
     }
 
+
+@app.route('/spell', methods=['GET'])
+def spell():
+    spell_name = app.current_request.query_params['spell_name']
+    fake = Faker()
+    spell_contents = (
+        fake.paragraphs(nb=5)
+    )
+    print('Running the Spell function')
+    return {'spell_name': spell_name, 'spell_contents': spell_contents}
