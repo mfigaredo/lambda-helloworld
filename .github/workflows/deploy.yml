@@ -25,7 +25,5 @@ jobs:
         run: pip install chalice requests
 
       - name: Deploy lambda to production
-        run: |
-          cd .
-          chalice deploy --stage prod
+        run: chalice deploy --stage prod
 
