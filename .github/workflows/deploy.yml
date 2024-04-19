@@ -22,7 +22,7 @@ jobs:
           python-version: 3.11
 
       - name: Install required packages
-        run: pip install chalice requests
+        run: pip install -r requirements.txt
 
       - name: Deploy lambda to production
         run: chalice deploy --stage prod
